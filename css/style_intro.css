@@ -1,0 +1,81 @@
+body {
+
+	background: url('images.png') no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-color: #CCA969;
+	font-family: oswald;
+	color:#ffffff;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+/*.button {
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}*/
+
+
+ul{
+  
+  font-size:16px;
+  position:relative;
+  left:22%;
+}
+
+.hvr-grow {
+	text-align:center;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+     background-color: #000000;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
+a:link {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+h1,h2{
+	color: #000000;
+	font-weight:500;
+	text-align:center;
+	font-family: oswald;
+}
+
+h3{
+	
+	font-weight:300;
+	text-align:center;
+	font-family: oswald;
+}
+
+/* lobster oswald poiret-one */
