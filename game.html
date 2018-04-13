@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Cows N Bulls</title>
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald|Poiret+One|Indie+Flower|Lobster|Shadows+Into+Light|Pacifico|Dancing+Script|Bangers' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="js/hashids.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col col-lg-12 col-md-1 col-sm-12 col-xs-12">
+				<h1>Cows and Bulls</h1>
+				<br/>
+				<br/>
+				<button id="choose_number" class="btn btn-default pull-right">
+					Choose a number
+				</button>
+			</div>		
+		</div>
+		<div id="game_board" class="row">
+			<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h3 id="title_work">Work in progress</h3>
+
+				<div class="panel panel-default">
+				  <div class="panel-heading">Entries</div>
+				  <table id="history_table" class="table table-condensed">
+				    <thead>
+				    	<tr>
+					    	<th>#</th>
+					    	<th>Your number</th>
+					    	<th>Cows</th>
+					    	<th>Bulls</th>
+				    	</tr>
+				    </thead>
+				    <tbody>
+				    </tbody>
+				  </table>
+				</div>
+
+				<form id="form_number_submit" class="form-inline">
+				  <div class="form-group">
+				    <label for="your_number">Number</label>
+				    <input type="number" class="form-control" id="your_number" placeholder="Try to guess my number">
+				  </div>
+				  <button id="try_it" type="" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<p id="status" class="small"></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
