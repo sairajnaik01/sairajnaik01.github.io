@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Global Recruitment</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oswald|Poiret+One|Indie+Flower|Lobster|Shadows+Into+Light|Pacifico|Dancing+Script|Bangers' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  </head>
+  <body class="body" background="rpic.jpg">
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="prefinal.html"><span><img src="ll.png" style="width:60px;height:60px;"> Global 3D Labs</span></a>
+    </div>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <button class="btn btn-primary navbar-btn "  ><a href="regis.html" style="color:white" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></button>
+      <li><a href="prefinal.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+    </ul>
+  </div>
+  </nav>
+  <div id="container">
+    <button class="hvr-grow" type="button" id="mass" onclick="Func()">Click the button to start</button>
+  </div>
+  <div id="quest"></div>
+  <div class="Parent" id="output">
+    <select id="answer"></select>
+  </div>
+  <div id="display"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+<script>
+  var questionNum = 0;                          // keep count of question, used for IF condition.
+  var question = '';  
+  var statement = '';
+  var stat='';
+  var display = document.getElementById('display');
+  var answer = document.getElementById('answer');
+  var quest = document.getElementById('quest'); 
+  var x = 0;
+  var data =[];
+  var q1 = ['Technical','Marketing','Human Resource'];
+  var q2 = {1:['Software Devoloper','Networking','System Analyst','Machine Learning'],2:['Marketing Specialist','Social Media Manager','Product Manager','Media Buyer'],3:['Application Specialist','Category Manager','Recruiter','HRIS']};
+  var q3 = {1:{1:['Web Devolopment','Mobile Devolopment','Application','Backend'],2:['Specialist','Technician','Engineer','Solutions Architect'],3:['Product Manager','Process Analyst','Senior System Analyst','Junior System Analyst'],4:['Researcher','Data Scientist Sr.','Junior Data Scientist']},2:{1:['Marketing Director','Marketing Manager','Marketing consultant','Reseach Analyst'],2:['Content Manager','Brand Manager','Digital Media Manager','Director of social media'],3:['Executive','Associative','Senior','Junior'],4:['Executive','Associative','Senior','Junior']},3:{1:['Assistant HR manager','HR analyst','Benefits Specialist','Benefits Administrator'],2:['Asst. HR manager','Director of talent','District HR manager','E-learning analyst'],3:['Contract recruiter','Executive recruiter','Employee relations Manager','Co-ordinator'],4:['Analyst','Manager','Functional leader','Advisor']}};
+  var q4 = ['Btech','Bcom','MTech','Bsc'];
+  var q5 = ['Fresher','1-3 years','4-6 years','Above 6 years'];
+  var q6 = ['Hyderabad','Bangalore','Delhi','Mumbai'];
+  var ans = {
+              1:{
+                  1:{1:{1:'7',2:'1',3:'5',4:'2'},2:{1:'4',2:'5',3:'5',4:'2'},3:{1:'4',2:'6',3:'3',4:'2'},4:{1:'4',2:'1',3:'1',4:'2'}},
+                  2:{1:{1:'3',2:'1',3:'5',4:'2'},2:{1:'4',2:'6',3:'5',4:'2'},3:{1:'4',2:'6',3:'1',4:'2'},4:{1:'4',2:'1',3:'5',4:'3'}},
+                  3:{1:{1:'4',2:'1',3:'5',4:'1'},2:{1:'4',2:'4',3:'5',4:'2'},3:{1:'4',2:'3',3:'5',4:'2'},4:{1:'4',2:'1',3:'7',4:'2'}},
+                  4:{1:{1:'4',2:'1',3:'4',4:'2'},2:{1:'4',2:'4',3:'5',4:'2'},3:{1:'4',2:'6',3:'1',4:'2'},4:{1:'4',2:'1',3:'3',4:'2'}}    
+                },
+              2:{
+                  1:{1:{1:'54',2:'1',3:'5',4:'2'},2:{1:'4',2:'4',3:'45',4:'2'},3:{1:'4',2:'6',3:'7',4:'2'},4:{1:'4',2:'8',3:'5',4:'2'}},
+                  2:{1:{1:'4',2:'1',3:'31',4:'2'},2:{1:'4',2:'4',3:'4',4:'2'},3:{1:'4',2:'5',3:'5',4:'2'},4:{1:'9',2:'1',3:'5',4:'2'}},
+                  3:{1:{1:'4',2:'1',3:'12',4:'2'},2:{1:'4',2:'31',3:'5',4:'2'},3:{1:'4',2:'6',3:'13',4:'2'},4:{1:'4',2:'1',3:'5',4:'14'}},
+                  4:{1:{1:'3',2:'1',3:'5',4:'2'},2:{1:'4',2:'4',3:'24',4:'2'},3:{1:'4',2:'1',3:'5',4:'2'},4:{1:'4',2:'1',3:'18',4:'2'}}      
+                },
+              3:{
+                  1:{1:{1:'4',2:'1',3:'5',4:'2'},2:{1:'12',2:'4',3:'5',4:'2'},3:{1:'4',2:'4',3:'5',4:'2'},4:{1:'4',2:'11',3:'5',4:'2'}},
+                  2:{1:{1:'4',2:'1',3:'25',4:'2'},2:{1:'4',2:'4',3:'15',4:'2'},3:{1:'14',2:'6',3:'5',4:'2'},4:{1:'4',2:'12',3:'5',4:'2'}},
+                  3:{1:{1:'4',2:'17',3:'5',4:'2'},2:{1:'4',2:'4',3:'16',4:'2'},3:{1:'4',2:'6',3:'5',4:'20'},4:{1:'4',2:'1',3:'5',4:'2'}},
+                  4:{1:{1:'4',2:'10',3:'5',4:'2'},2:{1:'4',2:'6',3:'5',4:'2'},3:{1:'4',2:'8',3:'5',4:'2'},4:{1:'4',2:'1',3:'13',4:'2'}}  
+                }
+            }
+
+function bot() 
+{ 
+    if (questionNum == 0) 
+    {
+      quest.innerHTML = '<h3>Hello!!</h3>';// output response
+      var container = document.getElementById('container');       // store id="output" in output variable
+      container.innerHTML = '';  
+      stat = '<h3>Which field are you interested in?</h3>';
+      question = '<option disabled selected > Click on this to get the options</option>';
+      for(var i=0;i<q1.length;i++)
+      {
+        question+='<option>'+q1[i]+'</option>';
+      }
+      statement='<button class="hvr-grow" type="button" onclick="myFunction()">Next Question</button>';	
+      setTimeout(timedQuestion, 1000);									// output next question after 2sec delay
+    }
+    else if (questionNum == 1) 
+    {
+      quest.innerHTML = '<h3>Thanks. Your next question is</h3>';   
+      stat = '<h3>Which specialisation are you interested in '+q1[data[0]-1]+'?</h3>';
+      question='<option disabled selected >Click on this to get the options</option>';
+      for(var i=0;i<q2[x].length;i++)
+      {
+        question+='<option>'+q2[x][i]+'</option>';
+      }
+      statement='<button  class="hvr-grow" type="button" onclick="myFunction()">Next Question</button>'; 
+      setTimeout(timedQuestion, 1000);                  // output next question after 2sec delay
+    }
+    else if (questionNum == 2)
+    {
+      quest.innerHTML = '<h3>Thanks. Your next question is</h3>';   
+      stat = '<h3>Which position are you interested in '+q2[data[0]][data[1]-1]+'?</h3>';
+      question='<option disabled selected >Click on this to get the options</option>';
+      for(var i=0;i<q3[data[0]][x].length;i++)
+      {
+        question+='<option>'+q3[data[0]][x][i]+'</option>';
+      }
+      statement='<button class="hvr-grow" type="button" onclick="myFunction()">Next Question</button>'; 
+      setTimeout(timedQuestion, 1000);                  // output next question after 2sec delay
+    }
+    else if (questionNum == 3)
+    {
+      quest.innerHTML = '<h3>Thanks. Your next question is</h3>';   
+      stat = '<h3>What is your qualification?</h3>';
+      question='<option disabled selected >Click on this to get the options</option>';
+      for(var i=0;i<q4.length;i++)
+      {
+        question+='<option>'+q4[i]+'</option>';
+      }
+      statement='<button class="hvr-grow" type="button" onclick="myFunction()">Next Question</button>'; 
+      setTimeout(timedQuestion, 1000);                  // output next question after 2sec delay
+    }
+    else if (questionNum == 4)
+    {
+      quest.innerHTML = '<h3>Thanks. Your next question is</h3>';   
+      stat = '<h3>What is your experience in '+q2[data[0]][data[1]-1]+'?</h3>';
+      question='<option disabled selected >Click on this to get the options</option>';
+      for(var i=0;i<q5.length;i++)
+      {
+        question+='<option>'+q5[i]+'</option>';
+      }
+      statement='<button class="hvr-grow" type="button" onclick="myFunction()">Next Question</button>'; 
+      setTimeout(timedQuestion, 1000);                  // output next question after 2sec delay
+    }
+    else if (questionNum == 5)
+    {
+      quest.innerHTML = '<h3>Thanks. Your next question is</h3>';   
+      stat = '<h3>Where do you want to work?</h3>';
+      question='<option disabled selected >Click on this to get the options</option>';
+      for(var i=0;i<q6.length;i++)
+      {
+        question+='<option>'+q6[i]+'</option>';
+      }
+      statement='<button class="hvr-grow" type="button" onclick="myFunction()">Next Question</button>'; 
+      setTimeout(timedQuestion, 1000);                  // output next question after 2sec delay
+    }   
+    else if (questionNum == 6)
+    {
+      setTimeout(200);
+      quest.innerHTML = '';
+      display.innerHTML = '';
+      var output = document.getElementById("output");
+      output.innerHTML='<h3>There are '+ans[data[0]][data[1]][data[2]][data[5]]+' vacancies for your required post</h3>'; 
+    }
+}
+
+function timedQuestion() {
+    quest.innerHTML = stat;
+    answer.innerHTML = question;
+
+    display.innerHTML = statement;
+}
+
+function myFunction() {
+    x = answer.selectedIndex;
+    data[questionNum]=x;
+    questionNum++;
+    bot();																							
+}
+
+function Func() {
+    bot();
+}
+
+</script>     
+<div class="footer">
+  <p style="color:white;font-family: calibri;font-size: 16px;">Contact Us<br> Global 3D Labs<br>Email:Global3d@xyz.com<br>Mobile:96****1245
+  </p>
+  
+  
+</div>
+</body>
+</html>
