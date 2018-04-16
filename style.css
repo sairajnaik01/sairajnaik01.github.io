@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+   border-radius:  5px;
+}
+
+.body
+  { 
+    background-size: cover;
+    background-position: relative;  
+  }
+h3, p{
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+  font-size:  40px;
+}
+
+p {
+  font-size: 30px;
+}
+
+#output,#container,#quest,#display {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+	color:white;
+	font-family: sans-serif;
+}
+
+.Parent select{
+	 width: 350px;
+	 height:60px;
+	 font-size: 25px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 2px 2px 2px;
+    border: none;
+    background: transparent;
+	justify-content: center;
+	color:#A44CA5  ;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.hvr-grow {
+	text-align:center;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+     background-color: #224ED6;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 105px 2px;
+    cursor: pointer;
+	font-family: sans-serif;
+}
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
+.nav {
+	margin-right:2%;
+	margin-left:2%;
+	padding :15px;
+}
